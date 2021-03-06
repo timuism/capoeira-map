@@ -7,10 +7,14 @@
         "watch-poll": "npm run watch -- --watch-poll",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
         "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --config=node_modules/laravel-mix/setup/webpack.config.js",
+        "start": "react-scripts start"
     },
     "devDependencies": {
-        "axios": "^0.19",
+        "@babel/core": "^7.13.8",
+        "@babel/preset-env": "^7.13.9",
+        "@babel/preset-react": "^7.12.13",
+        "axios": "^0.21.1",
         "cross-env": "^7.0",
         "laravel-mix": "^5.0.1",
         "lodash": "^4.17.19",
@@ -18,12 +22,19 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
+        "alpinejs": "^2.8.1",
         "autoprefixer": "^9.8.6",
-        "mapbox-gl": "^1.13.0",
+        "mapbox-gl": "^2.1.1",
         "postcss": "^7.0.35",
-        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1"
+        "react": "^17.0.1",
+        "react-dom": "^17.0.1",
+        "react-scripts": "^4.0.3",
+        "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.0.1",
+        "typescript": "^4.2.3",
+        "worker-loader": "^3.0.8"
     },
     "peerDependencies": {
         "postcss": "^8.0.0"
-    }
+    },
+    "name": "capoeiramap"
 }

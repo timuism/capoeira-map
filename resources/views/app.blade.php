@@ -6,20 +6,14 @@
 
         <title>Capoeira Map</title>
 
-        <link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+        <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
         <link href="{{ mix('/css/app.css') }}" rel='stylesheet' />
-        <script src="{{ mix('/js/app.js') }}"></script>
-
+        
     </head>
-    <body class="antialiased w-full h-full">
-            <div id="ui" class="absolute top-0 left-0 m-5 z-10 w-4/12">
-            
-                <form method="get" action="" class="bg-white p-5 rounded-md flex flex-col md:flex-row items-center justify-items-center">
-                    <input type="text" name="query" class="border-gray-300 border-2 rounded-md mr-3 p-3 flex-1" placeholder="Buscar para Grupo, Mestre ou Organizacão" value="" />
-                    <input type="submit" value="Search" class="bg-green-500 text-white text-lg rounded-md p-3 cursor-pointer" /> 
-                </form>
-            
-            </div>
-            <div id="capoeira-map" class="w-full h-full"></div>
+
+    <body class="w-full h-full antialiased">
+        <div id="app" class="w-full h-full"></div>
+        <script src="{{ mix('/js/app.js') }}"></script>
     </body>
+
 </html>

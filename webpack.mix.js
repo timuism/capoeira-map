@@ -1,6 +1,4 @@
 const mix = require('laravel-mix');
-const tailwindcss = require('tailwindcss');
-const { plugins } = require('tailwindcss/stubs/defaultConfig.stub');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,7 +11,7 @@ const { plugins } = require('tailwindcss/stubs/defaultConfig.stub');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
+mix.react('resources/js/app.jsx', 'public/js')
     .postCss('resources/css/app.css', 'public/css', [
-        tailwindcss
+        require('tailwindcss')
     ]);
