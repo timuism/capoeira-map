@@ -49503,6 +49503,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var mapbox_gl_dist_mapbox_gl_csp__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! mapbox-gl/dist/mapbox-gl-csp */ "./node_modules/mapbox-gl/dist/mapbox-gl-csp.js");
 /* harmony import */ var mapbox_gl_dist_mapbox_gl_csp__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(mapbox_gl_dist_mapbox_gl_csp__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var worker_loader_mapbox_gl_dist_mapbox_gl_csp_worker__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker */ "./node_modules/worker-loader/dist/cjs.js!./node_modules/mapbox-gl/dist/mapbox-gl-csp-worker.js");
+/* harmony import */ var _components_ui_tsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/ui.tsx */ "./resources/js/components/ui.tsx");
+/* harmony import */ var _components_ui_tsx__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_ui_tsx__WEBPACK_IMPORTED_MODULE_4__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -49514,6 +49516,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 
@@ -49555,8 +49558,8 @@ var Map = function Map() {
     };
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "w-full h-full"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "w-screen h-screen"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_ui_tsx__WEBPACK_IMPORTED_MODULE_4___default.a, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "absolute top-0 bottom-0 left-0 right-0 map-container",
     ref: mapContainer
   }));
@@ -49604,6 +49607,229 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     forceTLS: true
 // });
+
+/***/ }),
+
+/***/ "./resources/js/components/add_group.tsx":
+/*!***********************************************!*\
+  !*** ./resources/js/components/add_group.tsx ***!
+  \***********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var input_1 = __importDefault(__webpack_require__(/*! ./form/input */ "./resources/js/components/form/input.tsx"));
+var field_1 = __importDefault(__webpack_require__(/*! ./form/field */ "./resources/js/components/form/field.tsx"));
+function AddGroup(_a) {
+    var show = _a.show;
+    return (react_1.default.createElement("div", { className: "\n                " + (show ? 'flex opacity-1' : 'hidden opacity-0') + " \n                flex flex-col items-center p-5 bg-white rounded-md shadow-md justify-items-center\n                transition-opacity duration-300\n                " },
+        react_1.default.createElement("h2", { className: "text-lg font-semibold text-gray-400 capitalize" }, "Add New Group"),
+        react_1.default.createElement("form", { className: "flex flex-col w-full" },
+            react_1.default.createElement(field_1.default, { label: "Email" },
+                react_1.default.createElement(input_1.default, { id: "address_search", name: "address", placeholder: "Address" })),
+            react_1.default.createElement(field_1.default, { label: "Group Name" },
+                react_1.default.createElement(input_1.default, { name: "group_name", placeholder: "Group Name" })),
+            react_1.default.createElement(field_1.default, { label: "Mestre, Mestra or Group Leader" },
+                react_1.default.createElement(input_1.default, { name: "group_leader", placeholder: "Mestre, Mestra, or Group Leader" })),
+            react_1.default.createElement("button", { className: "p-5 m-5 text-white bg-yellow-600 rounded-md", type: "submit" }, "Add Group"))));
+}
+exports.default = AddGroup;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/add_user.tsx":
+/*!**********************************************!*\
+  !*** ./resources/js/components/add_user.tsx ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var field_1 = __importDefault(__webpack_require__(/*! ./form/field */ "./resources/js/components/form/field.tsx"));
+var select_1 = __importDefault(__webpack_require__(/*! ./form/select */ "./resources/js/components/form/select.tsx"));
+var input_1 = __importDefault(__webpack_require__(/*! ./form/input */ "./resources/js/components/form/input.tsx"));
+function AddUser(_a) {
+    var show = _a.show;
+    return (react_1.default.createElement("div", { className: "\n                " + (show ? 'flex opacity-1' : 'hidden opacity-0') + " \n                flex flex-col items-center p-5 bg-white rounded-md shadow-md justify-items-center\n                transition-opacity duration-300\n            " },
+        react_1.default.createElement("h2", { className: "text-lg font-semibold text-gray-400 capitalize" }, "Add New User"),
+        react_1.default.createElement("form", { className: "flex flex-col w-full text-gray-700" },
+            react_1.default.createElement(field_1.default, { label: "My name is" },
+                react_1.default.createElement(input_1.default, { name: "user_full_name" })),
+            react_1.default.createElement(field_1.default, { label: "But you can call me" },
+                react_1.default.createElement(input_1.default, { name: "user_display_name" })),
+            react_1.default.createElement(field_1.default, { label: "Email or Phone?" },
+                react_1.default.createElement(select_1.default, { name: "way_of_contact", options: ["email", "phone"] })),
+            react_1.default.createElement(field_1.default, { label: "Email" },
+                react_1.default.createElement(input_1.default, { name: "user_email" })),
+            react_1.default.createElement(field_1.default, { label: "Phone Number" },
+                react_1.default.createElement(input_1.default, { name: "user_phone" })),
+            react_1.default.createElement("button", { className: "p-5 m-5 text-white bg-yellow-600 rounded-md", type: "submit" }, "Add User"))));
+}
+exports.default = AddUser;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/form/field.tsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/form/field.tsx ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+function Field(_a) {
+    var label = _a.label, children = _a.children;
+    return (react_1.default.createElement("label", { className: "flex flex-col m-1" },
+        react_1.default.createElement("span", { className: "mb-1 text-sm font-semibold text-gray-400" }, label),
+        children));
+}
+exports.default = Field;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/form/input.tsx":
+/*!************************************************!*\
+  !*** ./resources/js/components/form/input.tsx ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+function Input(_a) {
+    var id = _a.id, name = _a.name, placeholder = _a.placeholder;
+    return (react_1.default.createElement("input", { id: id, type: "text", name: "{name}", className: "flex-1 p-3 mr-3 border-2 border-gray-300 rounded-md", placeholder: placeholder }));
+}
+exports.default = Input;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/form/select.tsx":
+/*!*************************************************!*\
+  !*** ./resources/js/components/form/select.tsx ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+function Select(_a) {
+    var name = _a.name, _b = _a.options, options = _b === void 0 ? [] : _b;
+    return (react_1.default.createElement("select", { name: name, className: "flex-1 p-3 mr-3 border-2 border-gray-300 rounded-md form-select" }, options.map(function (option) { return (react_1.default.createElement("option", { key: name + "-" + option }, option)); })));
+}
+exports.default = Select;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/global_search.tsx":
+/*!***************************************************!*\
+  !*** ./resources/js/components/global_search.tsx ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+function GlobalSearch() {
+    return (react_1.default.createElement("form", { method: "get", action: "", className: "flex flex-col items-center p-5 bg-white bg-opacity-50 rounded-md md:flex-row justify-items-center" },
+        react_1.default.createElement("input", { id: "location_search", type: "text", className: "flex-1 p-3 mr-3 border-2 border-gray-300 rounded-md", placeholder: "Buscar para Grupo, Mestre ou Organizac\u00E3o" }),
+        react_1.default.createElement("input", { type: "submit", value: "Search", className: "p-3 text-lg text-white bg-green-500 rounded-md cursor-pointer" })));
+}
+exports.default = GlobalSearch;
+
+
+/***/ }),
+
+/***/ "./resources/js/components/ui.tsx":
+/*!****************************************!*\
+  !*** ./resources/js/components/ui.tsx ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+var react_1 = __importStar(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+var global_search_1 = __importDefault(__webpack_require__(/*! ./global_search */ "./resources/js/components/global_search.tsx"));
+var add_user_1 = __importDefault(__webpack_require__(/*! ./add_user */ "./resources/js/components/add_user.tsx"));
+var add_group_1 = __importDefault(__webpack_require__(/*! ./add_group */ "./resources/js/components/add_group.tsx"));
+function Ui() {
+    var _a = react_1.useState(false), showAddUser = _a[0], setShowAddUser = _a[1];
+    var _b = react_1.useState(false), showAddGroup = _b[0], setShowAddGroup = _b[1];
+    return (react_1.default.createElement("div", { id: "ui", className: "absolute top-0 bottom-0 left-0 right-0 m-5 space-y-5" },
+        react_1.default.createElement("div", { id: "panes", className: "absolute z-20 flex items-center justify-center w-full h-full" },
+            react_1.default.createElement(add_user_1.default, { show: showAddUser }),
+            react_1.default.createElement(add_group_1.default, { show: showAddGroup })),
+        react_1.default.createElement("div", { className: "absolute top-0 z-30 flex space-x-5" },
+            react_1.default.createElement(global_search_1.default, null),
+            react_1.default.createElement("form", { method: "get", action: "", className: "flex items-center p-5 space-x-3 bg-white rounded-md shadow-md md:flex-row justify-items-center" },
+                react_1.default.createElement("button", { type: "button", className: "flex-grow p-3 text-lg text-white transition-colors duration-300 bg-yellow-500 rounded-md cursor-pointer hover:text-gray-600 hover:bg-gray-300", onClick: function () { return (showAddUser ? setShowAddUser(false) : setShowAddUser(true)); } }, "Add User"),
+                react_1.default.createElement("button", { type: "button", className: "flex-grow p-3 text-lg text-white transition-colors duration-300 bg-yellow-500 rounded-md cursor-pointer hover:text-gray-600 hover:bg-gray-300", onClick: function () { return (showAddGroup ? setShowAddGroup(false) : setShowAddGroup(true)); } }, "Add Group")))));
+}
+exports.default = Ui;
+;
+
 
 /***/ }),
 

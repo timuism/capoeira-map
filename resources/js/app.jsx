@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import ReactDOM from 'react-dom';
 import mapboxgl from 'mapbox-gl/dist/mapbox-gl-csp';
 import MapboxWorker from 'worker-loader!mapbox-gl/dist/mapbox-gl-csp-worker';
+import Ui from './components/ui.tsx';
 require('./bootstrap');
 
 mapboxgl.workerClass = MapboxWorker;
@@ -25,7 +26,9 @@ const Map = () => {
     }, []);
 
     return (
-        <div className="w-full h-full">
+        <div className="w-screen h-screen">
+            <Ui />
+
             <div 
                 className="absolute top-0 bottom-0 left-0 right-0 map-container" 
                 ref={mapContainer} 
