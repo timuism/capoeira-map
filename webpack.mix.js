@@ -11,7 +11,21 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.react('resources/js/app.jsx', 'public/js')
+mix.react('resources/js/app.jsx', 'public/js/app.js')
+    .webpackConfig({
+        module: {
+        rules: [
+            {
+            test: /\.tsx?$/,
+            loader: "ts-loader",
+            exclude: /node_modules/
+            }
+        ]
+        },
+        resolve: {
+        extensions: ["*", ".js", ".jsx", ".ts", ".tsx"]
+        }
+    })
     .postCss('resources/css/app.css', 'public/css', [
         require('tailwindcss')
-    ]);
+    ])
